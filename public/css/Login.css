@@ -43,6 +43,8 @@
 
 header{
   text-align: center;
+  margin-top: 250px;
+  margin-left: 20px;
 }
 
 .box {
@@ -58,7 +60,6 @@ input{
 }
 
 .box .text {
-  position: fixed;
   width: 331px;
   height: 61px;
   top: 100px;
