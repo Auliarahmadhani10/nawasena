@@ -11,7 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/register.css">
+  
 <div class="Login-input">
   <div class="input"> 
       <div class="login-title">
@@ -25,22 +26,17 @@
 
     <div class="inputpassword">
           <input type="password" name="password" id="" required="required">
-          <span>Password</span>
+          <span>Buat Password</span>
     </div>
 
     <div class="input-btn">
     <form action="#" method=""> 
-        <a href="#" class="button">Masuk</a>
+        <a href="#" class="button">Daftar</a>
     </form>
-    </div>
-
-    <div class="checkbox"> 
-    <input type="checkbox" id="check">
-    <label for="check">Remember Me</label>
     </div>
   </div> 
 
-<div class="login-text">
+  <div class="login-text">
   <div class="logo">
     <img src="images/logo.png" alt="" width="200px" height="200px">
     <label for="img">NAWASENA</label>

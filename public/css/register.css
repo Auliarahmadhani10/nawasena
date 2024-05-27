@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    max-width: 1000px
   }
   
   body{
@@ -23,14 +23,12 @@
   background-color: #F202AF;
   font-family: Arial, Helvetica, sans-serif ;
   overflow: hidden ;
+  }
 
+  .login-input{
+    margin: 0 ;
   }
   
-  .login-input{
-    height: 1000px;
-    margin: 0;
-  }
-
   .input{
   position: relative;
   max-width: 1000px;
@@ -41,9 +39,6 @@
   border: black ;
   border-color: black ;
 
-  
-  
-  
   }
   .inputnama{
     position: relative;
@@ -167,10 +162,9 @@
   
   .button
   {
-  
     position: relative;
     margin-left: 23px;
-    bottom: -80px ;
+    bottom: -50px ;
     margin-top: 0px ;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
