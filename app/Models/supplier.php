@@ -17,6 +17,7 @@ class supplier extends Model
     protected $fillable = [
         'id',
         'nama_supplier',
+        'nis',
         'no_telp',
         'no_telp_verified_at',
         'alamat',

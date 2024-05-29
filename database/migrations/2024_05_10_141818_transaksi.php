@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->datetime('tanggal'); 
+            $table->datetime('tanggal');
             $table->string('keterangan', 100);
-            $table->foreign('barang_id')->references('id')->on('barang'); 
-            $table->foreign('pembeli_id')->references('id')->on('pembeli'); 
+            $table->foreign('barang_id')->references('id')->on('barang');
+            $table->foreign('pembeli_id')->references('id')->on('pembeli');
             $table->unsignedBigInteger('barang_id');
             $table->unsignedBigInteger('pembeli_id');
-    
+
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('transaksi');
     }
 };

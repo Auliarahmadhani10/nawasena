@@ -23,5 +23,5 @@ require __DIR__.'/auth.php';
 
 
 
-route::get('admin/dashboard',[HomeController::class,'index']);
+route::get('admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin']);
 
