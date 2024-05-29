@@ -29,8 +29,8 @@
     </div>
 
     <div class="input-btn">
-    <form action="#" method=""> 
-        <a href="#" class="button">Masuk</a>
+    <form action="open" method=""> 
+        <a href="/beranda" class="button">Masuk</a>
     </form>
     </div>
 
