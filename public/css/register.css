@@ -1,0 +1,237 @@
+.login-title{
+    margin-left: -5px ;
+    bottom: 100px;
+    top: 100px;
+    width: 350px ;
+    color: white ;
+    position: relative;
+    font-size: 20px;
+    font-weight: 10px;
+    font-family: Arial, Helvetica, sans-serif; 
+    z-index: 3;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1000px
+  }
+  
+  body{
+  display: flex;
+  background-color: #F202AF;
+  font-family: Arial, Helvetica, sans-serif ;
+  overflow: hidden ;
+  }
+
+  .login-input{
+    margin: 0 ;
+  }
+  
+  .input{
+  position: relative;
+  max-width: 1000px;
+  width: 300px ;
+  margin-bottom: 100px ;
+  margin-left: 950px ;
+  margin-top: 20px ;
+  border: black ;
+  border-color: black ;
+
+  }
+  .inputnama{
+    position: relative;
+    width: 250px;
+  }
+  .inputpassword{
+    position: relative;
+    width: 250px;
+  }
+  .inputnama input
+  {
+    margin: auto ;
+    margin-left: 0;
+    margin-top: 170px;
+    width: 300px;
+    padding: 15px;
+    background-color: #F202AF;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+  }
+  
+  .inputpassword input
+  {
+    margin: auto ;
+    margin-left: 0px;
+    margin-top: 20px;
+    width: 300px;
+    padding: 15px;
+    border: 20px ;
+    background-color: #F202AF;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+  }
+  
+  
+  .inputnama span
+  {
+  margin: auto ;
+  margin-left: 0px ;
+  margin-top: -58px;
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .inputpassword span
+  {
+  margin: auto ;
+  margin-left: 0px ;
+  margin-top: -58px;
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .inputnama input:valid ~ span,
+  .inputnama input:focus ~ span
+  {
+    color: aqua;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0,65em;
+    padding: 0 10px;
+    background-color: #F202AF;
+    border-right: 1px solid aqua;
+    border-left: 1px solid aqua;
+    letter-spacing: 3px;
+  }
+  
+  .inputnama input:valid,
+  .inputnama input:focus
+  {
+  border: 1px solid aqua;
+  }
+  
+  .inputpassword input:valid ~ span,
+  .inputpassword input:focus ~ span
+  {
+    color: aqua;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0,65em;
+    padding: 0 10px;
+    background-color: #F202AF;
+    border-right: 1px solid aqua;
+    border-left: 1px solid aqua;
+    letter-spacing: 3px;
+  }
+  
+  .inputpassword input:valid,
+  .inputpassword input:focus
+  {
+    border: 1px solid aqua;
+  }
+  
+  .inputpassword :nth-child(2) input:valid ~ span,
+  .inputpassword :nth-child(2) input:focus ~ span
+  {
+    background: aqua;
+    color: black;
+    border-radius: 2px;
+  }
+  
+  .button
+  {
+    position: relative;
+    margin-left: 23px;
+    bottom: -50px ;
+    margin-top: 0px ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(#FFABE8,#F202AF,#8C0165);
+    width: 100px ; 
+    padding: 15px 90px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+  
+  .button:hover
+  {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo
+  {
+    margin-left: 300px ;
+    margin-top: -300px;
+    margin-bottom: 500px ;
+  }
+  
+  .logo label
+  {
+    margin-left: -193px ;
+    margin-top: 0px ;
+    margin-bottom: 0px ;
+    font-weight: bold ;
+    color: white ;
+    font-size: 35px ;
+  }
+  
+  h3
+  {
+    position: relative;
+    margin: auto ;
+    bottom: 0px ;
+    top: -475px ;
+    left: 65px ;
+    color: white ;
+    font-weight: 100 ;
+    text-decoration-style: solid ;
+  }
+  
+  .checkbox
+{
+    position: relative;
+    bottom: 10px ;
+    left: 10px ;
+    
+  }
+  
+  .checkbox label
+  {
+    color: white ;
+    margin: auto ;
+    margin-left: 0px;
+    margin-right: 40px ;
+    text-align: center ;
+  }
