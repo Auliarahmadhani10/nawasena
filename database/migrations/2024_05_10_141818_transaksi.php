@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transaksi', function (Blueprint $table) {
-            $table->bigIncrements('id')->primary();
+            $table->id();
             $table->datetime('tanggal'); 
             $table->string('keterangan', 100);
             $table->foreign('barang_id')->references('id')->on('barang'); 

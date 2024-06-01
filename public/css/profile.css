@@ -1,13 +1,83 @@
-.box{
-width: 1440px;
-height: 165px;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: var(--font-family);
 }
 
-.box .rectangle{
+body{
+    font-family: 'inter';
+}
+
+.header--menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* position: fixed; */
+    align-items: center;
+    /* gap: 20px; */
+    background: #8b2f71;
+}
+
+.menu--icons {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.menu--icons i {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fa-cart-shopping {
+    background: transparent !important;
+    color: white;
+}
+
+.cart--icon {
+    padding: 20px;
+}
+
+.cart--icon span {
+    background: mediumseagreen;
+    color: var(--accent-color);
+    border-radius: 40%;
+    width: 15px;
+    font-size: 11px;
+    display: inline-flex;
+    justify-content: center;
+    font-weight: 600;
     position: fixed;
-    width: 1440px;
-    height: 105px;
-    top: 0;
-    left: 0;
-    background-color: #8B2F71;
+    right: 20px;
+}
+
+.logo-img {
+    size: 10%;
+}
+
+.logo{
+    display: inline-flex;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.kembali{
+    margin-top: 10px;
+    z-index: 10;
+    font-weight: bold;
+    font-family: 'inter';
+    font-size: 22;
+}
+
+.profile{
+    margin-left: 10px;
 }
