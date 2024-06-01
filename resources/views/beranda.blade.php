@@ -12,15 +12,25 @@
     <link rel="stylesheet" href="css/beranda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css ">
 </head>
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
 <body>
 
     <header class="header">
         <nav class="header--menu">
-            <div class="logo">
-            <img class="logo-img" src="images/logo.svg" alt="">
-                <h1 class="logo-text">NAWASENA</h1>
+            <div class="burger--icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="search--box">
+                <i class="fa.solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="menu--icons">
+                <a href="{{ route('profile.index') }}"><i class="fa-solid fa-user"></i></a>
+                <div class="cart--icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>0</span>
+                </div>
             </div>
             
                 <!-- menu section -->
@@ -41,16 +51,25 @@
 
         </nav>
     </header>
+    <!-- menu section -->
 
-    <main>
-            <!-- cover section -->
-    <section class="cover" >
-        <img  class="cover-img" img="images/cover.svg" alt="">
-            {{-- <h1 class="text--overlay">MASUKAN PRODUK ANDA <br>
+    {{-- <div class="daftar">
+        <h2 class="daftar-semua">Semua</h2>
+        <h2 class="daftar-makanan">Makanan</h2>
+        <h2 class="daftar-minuman">Minuman</h2>
+        <h2 class="daftar-suka">Suka</h2> 
+    </div> --}}
+
+    <!-- cover section -->
+    <section class="cover">
+        <div class="cover--overlay">
+            <img class="image--overlay" img="images/cover.png" alt="">
+            <h1 class="text--overlay">MASUKAN PRODUK ANDA <br>
                 <span class="slogan">Diskon Hingga 15%</span>
             </h1> --}}
     </section>
 
+    <main>
         <h2 class="section-heading">Menu Popular</h2>
         <div class="menu--list">
             <div class="menu--item">
@@ -87,59 +106,18 @@
         <!-- card item section-->
         <h2 class="section-heading">Makanan Lain</h2>
         <div class="card--list">
-            <div class="card">
-                <img src="images/menu-1.png" alt="">
-                <h4 class="card--title">Bakso</h4>
-                <div class="card--price">
-                    <div class="price">12.000 IDR</div>
-                    <i class="fa-solid fa-plus add-to-cart"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="images/menu-2.png" alt="">
-                <h4 class="card--title">Mochi</h4>
-                <div class="card--price">
-                    <div class="price">8.000 IDR</div>
-                    <i class="fa-solid fa-plus add-to-cart"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="images/menu-1.png" alt="">
-                <h4 class="card--title">Bakso</h4>
-                <div class="card--price">
-                    <div class="price">12.000 IDR</div>
-                    <i class="fa-solid fa-plus add-to-cart"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="images/menu-2.png" alt="">
-                <h4 class="card--title">Mochi</h4>
-                <div class="card--price">
-                    <div class="price">8.000 IDR</div>
-                    <i class="fa-solid fa-plus add-to-cart"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="images/menu-1.png" alt="">
-                <h4 class="card--title">Bakso</h4>
-                <div class="card--price">
-                    <div class="price">12.000 IDR</div>
-                    <i class="fa-solid fa-plus add-to-cart"></i>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="images/menu-2.png" alt="">
-                <h4 class="card--title">Mochi</h4>
-                <div class="card--price">
-                    <div class="price">8.000 IDR</div>
-                    <i class="fa-solid fa-plus add-to-cart"></i>
-                </div>
-            </div>
+            @foreach ($barangs as $barang)
+                <a href="{{ '/' . $barang->nama_barang }}">
+                    <div class="card">
+                        <img src="{{ asset('/storage/products/' . $barang->image) }}" alt="">
+                        <h4 class="card--title">{{ $barang->nama_barang }}</h4>
+                        <div class="card--price">
+                            <div class="price">Rp. {{ number_format($barang->harga, 2, ',', '.') }} IDR</div>
+                            <i class="fa-solid fa-plus add-to-cart"></i>
+                        </div>
+                    </div>
+                </a>
+            @endforeach
         </div>
 
         <!-- cart sidebar section -->

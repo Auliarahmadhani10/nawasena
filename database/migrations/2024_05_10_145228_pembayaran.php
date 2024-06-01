@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pembayaran', function (Blueprint $table) {
-            $table->id();
-            $table->datetime('tgl_bayar'); 
+            $table->bigIncrements('id')->primary();
+            $table->datetime('tgl_bayar');
             $table->integer('total_bayar')->unsigned();
-            $table->foreign('transaksi_id')->references('id')->on('transaksi'); 
+            $table->foreign('transaksi_id')->references('id')->on('transaksi');
             $table->unsignedBigInteger('transaksi_id');
-           
-        }); 
+
+        });
     }
 
     /**
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('pembayaran');
     }
 };
