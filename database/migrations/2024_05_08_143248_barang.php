@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->integer('harga')->unsigned();
             $table->integer('stok')->unsigned();
-            $table->foreign('supplier_id')->references('id')->on('supplier'); // Foreign key ke tabel supplier
-            $table->unsignedBigInteger('supplier_id');
+            $table->foreignId('user_id')->references('id')->on('users'); // Foreign key ke tabel supplier
             $table->timestamps();
         });
     }

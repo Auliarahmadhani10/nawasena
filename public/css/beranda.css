@@ -276,7 +276,7 @@ main {
     height: 100%;
     position: fixed;
     top: 0;
-    /*right: 0; */
+    /* right: 0; */
     right: -300px;
     background-color: var(--accent-color);
     box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);

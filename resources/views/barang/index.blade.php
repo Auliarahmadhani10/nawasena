@@ -24,6 +24,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">nama barang</th>
+                                    <th scope="col">image</th>
                                     <th scope="col">harga</th>
                                     <th scope="col">stok</th>
                                     <th scope="col">keterangan</th>
@@ -31,14 +32,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($barang as $barang)
+                                @forelse ($barangs as $barang)
                                     <tr>
-                                        <td class="text-center">
-                                            <img src="{{ asset('/storage/barang/'.$barang->image) }}" class="rounded" style="width: 150px">
+                                        <td>
+                                            {{ $barang->nama_barang }}
                                         </td>
-                                        <td>{{ $barang->title }}</td>
-                                        <td>{{ "Rp " . number_format($barang->price,2,',','.') }}</td>
-                                        <td>{{ $barang->stock }}</td>
+                                        <td class="text-center">
+                                            <img src="{{ asset('/storage/products/'.$barang->image) }}" class="rounded" style="width: 150px">
+                                        </td>
+                                        <td>{{ "Rp " . number_format($barang->harga,2,',','.') }}</td>
+                                        <td>{{ $barang->stok }}</td>
+                                        <td>{{ $barang->keterangan }}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('barang.destroy', $barang->id) }}" method="POST">
                                                 <a href="{{ route('barang.show', $barang->id) }}" class="btn btn-sm btn-dark">SHOW</a>
@@ -56,7 +60,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $barang->links() }}
+                        {{-- {{ $barang->links() }} --}}
                     </div>
                 </div>
             </div>

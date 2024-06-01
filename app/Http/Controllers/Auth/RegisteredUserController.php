@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\pembeli;
+use App\Models\supplier;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -31,20 +33,22 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'nis' => ['required', "numeric"],
+            'no_telp' => ["required", "numeric"],
+            'alamat' => ["required"],
+            'role' => ["required"]
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+        $user = User::query()->create([
+            "nama" => $request->name,
+            "nis" => $request->nis,
+            "no_telp" => $request->no_telp,
+            "alamat" => $request->alamat,
+            "role" => $request->role
         ]);
-
-        event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(route('beranda', absolute: false));
     }
 }
