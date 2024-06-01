@@ -2,7 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\supplier;
 use Closure;
+use Exception;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,13 +20,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->usertype != 'admin')
-        {
-
-            return redirect('/');
-        }
-
-
+        if (Auth::user()->role !== "supplier") return redirect("/beranda");
 
         return $next($request);
     }

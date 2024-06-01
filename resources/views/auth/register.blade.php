@@ -9,34 +9,41 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-        <!-- Email Address -->
+        <!-- nis Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-label for="nis" :value="__('Nis')" />
+            <x-text-input id="nis" class="block mt-1 w-full" type="number" name="nis" :value="old('nis')" required autocomplete="nis" />
+            <x-input-error :messages="$errors->get('nis')" class="mt-2" />
         </div>
 
-        <!-- Password -->
+        <!-- no.telp -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="no_telp" :value="__('No. Telp')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+            <x-text-input id="no_telp" class="block mt-1 w-full"
+                            type="number"
+                            name="no_telp"
+                            required autocomplete="new-no-telp" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('no_telp')" class="mt-2" />
         </div>
 
-        <!-- Confirm Password -->
+        <!-- Alamat Address -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-input-label for="alamat" :value="__('Alamat')" />
+            <x-text-input id="alamat" class="block mt-1 w-full" type="text" name="alamat" :value="old('alamat')" required autocomplete="username" />
+            <x-input-error :messages="$errors->get('alamat')" class="mt-2" />
+        </div>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        <div class="mt-4">
+            <x-input-label for="role" :value="__('Role')" />
+            {{-- <x-text-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autocomplete="username" /> --}}
+            <select id="role" name="role" :value="old('role')" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                <option value="">Pilih Role</option>
+                <option value="suplier">Suplier</option>
+                <option value="pembeli">Pembeli</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">

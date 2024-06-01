@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
             $table->string('nama_supplier',30);
             $table->integer('nis')->unique();
-            $table->integer('no_telp')->unique();
+            $table->string('no_telp',15)->unique();
             $table->timestamp('no_telp_verified_at')->nullable();
             $table->string('alamat');
         });
