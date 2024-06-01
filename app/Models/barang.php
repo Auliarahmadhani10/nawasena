@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class barang extends Model
 {
@@ -22,16 +23,12 @@ class barang extends Model
         'nama_barang',
         'harga',
         'stok',
-        'supplier_id',
+        'user_id',
+        'keterangan',
     ];
 
-    public function supplier()
+    public function user(): BelongsTo 
     {
-        return $this->belongsTo(supplier::class); // dari supplier
-    }
-
-    public function transaksi()
-    {
-    return $this->hasMany(transaksi::class,'barang_id'); // ke transaksi
+        return $this->belongsTo(User::class);
     }
 }

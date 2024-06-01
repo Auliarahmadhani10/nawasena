@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class supplier extends Model
+class supplier extends Authenticatable
 {
     use HasFactory;
+
+    protected $table = 'supplier';
+    public $timestamps = false;
 
      /**
      * fillable
@@ -15,8 +19,8 @@ class supplier extends Model
      * @var array
      */
     protected $fillable = [
-        'id',
         'nama_supplier',
+        'nis',
         'no_telp',
         'no_telp_verified_at',
         'alamat',
