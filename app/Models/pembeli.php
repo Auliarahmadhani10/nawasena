@@ -17,6 +17,7 @@ class pembeli extends Model
     protected $fillable = [
         'id',
         'nama_pembeli',
+        'nis',
         'no_telp',
         'no_telp_verified_at',
         'alamat',
